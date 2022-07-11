@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class matches(models.Model):
-    match = models.IntegerField(primary_key=True)
+    id = models.IntegerField(primary_key=True)
     season = models.IntegerField()
     city = models.CharField(max_length=200, null=True)
     date = models.DateField()
@@ -25,9 +25,9 @@ class matches(models.Model):
 
 class deliveries(models.Model):
 
-    match = models.ForeignKey(matches, on_delete=models.CASCADE, blank=True)
+    # match = models.ForeignKey(matches, on_delete=models.CASCADE, blank=True)
 
-    # match_id = models.IntegerField()
+    match_id = models.IntegerField()
     inning = models.CharField(max_length=200)
     batting_team = models.CharField(max_length=100)
     bowling_team = models.CharField(max_length=100)
