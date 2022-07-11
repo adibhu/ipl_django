@@ -1,4 +1,4 @@
-from itertools import count
+
 from unittest import result
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -7,5 +7,9 @@ from django.db.models import Count
 
 # Create your views here.
 def matches_played_per_year(request):
-    result = HttpResponse(matches.objects.values('season').annotate(no_of_matches=Count('id')).order_by('season'))
-    return render(request, 'output.html',result = {result})
+    result =matches.objects.values('season').annotate(no_of_matches=Count('id')).order_by('season')
+    return render(request, 'output.html', {'result' : result})
+
+def number_of_matches_won_per_team(request):
+    result = matches.objects.values('season','winner').annotate(no_of_wins=Count('winner')).order_by('season')
+    return render(request, 'output2.html', {'result' : result})

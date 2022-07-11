@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from iplapp.views import matches_played_per_year
+from iplapp.views import matches_played_per_year,number_of_matches_won_per_team
 
 urlpatterns = [
     path('',matches_played_per_year),
+    path('problem2/',number_of_matches_won_per_team),
     path('admin/', admin.site.urls),
 ]
