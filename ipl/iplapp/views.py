@@ -18,4 +18,6 @@ def extra_runs_conceded(request):
     result = deliveries.objects.values('bowling_team').annotate(extra_runs_con=Sum('extra_runs')).order_by('bowling_team')
     return render(request, 'output3.html', {'result' : result})
 
-def 
+def top_ten_economical_bowler(request):
+    result = deliveries.objects.values('bowler').annotate(economy=Sum('total_runs')*6/Count('id')).order_by('economy')[:10]
+    return render(request, 'output4.html', {'result': result})
