@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from iplapp.views import matches_played_per_year,number_of_matches_won_per_team,extra_runs_conceded, top_ten_economical_bowler
+from iplapp.views import matches_played_per_year, number_of_matches_won_per_team, extra_runs_conceded, top_ten_economical_bowler
 
 urlpatterns = [
-    path('',matches_played_per_year),
-    path('problem2/',number_of_matches_won_per_team),
-    path('problem3/',extra_runs_conceded),
-    path('problem4/',top_ten_economical_bowler),
+    path('problem1/', matches_played_per_year),
+    path('problem2/', number_of_matches_won_per_team),
+    path('problem3/', extra_runs_conceded),
+    path('problem4/', top_ten_economical_bowler),
     path('admin/', admin.site.urls),
 ]

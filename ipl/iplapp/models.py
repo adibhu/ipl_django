@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class matches(models.Model):
     id = models.IntegerField(primary_key=True)
     season = models.IntegerField()
@@ -14,8 +15,8 @@ class matches(models.Model):
     result = models.CharField(max_length=200, null=True)
     dl_applied = models.CharField(max_length=200, null=True)
     winner = models.CharField(max_length=200, null=True)
-    win_by_runs = models.IntegerField( null=True)
-    win_by_wickets = models.IntegerField( null=True)
+    win_by_runs = models.IntegerField(null=True)
+    win_by_wickets = models.IntegerField(null=True)
     player_of_match = models.CharField(max_length=200, null=True)
     venue = models.CharField(max_length=200, null=True)
     umpire1 = models.CharField(max_length=200, null=True)
@@ -47,4 +48,4 @@ class deliveries(models.Model):
     total_runs = models.IntegerField()
     player_dismissed = models.CharField(max_length=100)
     dismissal_kind = models.CharField(max_length=100)
-    fielder =models.CharField(max_length=100, null=True, blank=True)
+    fielder = models.CharField(max_length=100, null=True, blank=True)
